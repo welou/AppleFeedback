@@ -13,7 +13,7 @@ The `MenuBarExtra` window should react to system appearance changing.
 The `MenuBarExtra` window always remains in dark appearance.
 
 ### Why is this a problem:
-If an app includes a complex view inside a `MenuBarExtra` and the user has configured macOS to use the light appearance, it is jarring to see the Menu Bar window in the dark appearance. Furthermore, if the app includes a setting where user can specifically choose whether they want to see the application itself use light or dark more, regardless of system’s appearance, this setting would be ignored as system will anyway force the dark appearance on the Menu Bar window.
+If an app includes a complex view inside a `MenuBarExtra` and the user has configured macOS to use the light appearance, it is jarring to see the Menu Bar window in the dark appearance. Furthermore, if the app includes a setting where user can specifically choose whether they want to see the application itself use light or dark appearance, regardless of system’s appearance, this setting would be ignored as system will anyway force the dark appearance on the Menu Bar window.
 
 ### Additional information:
 
