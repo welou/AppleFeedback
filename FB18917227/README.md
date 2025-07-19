@@ -19,6 +19,6 @@ If an app includes a complex view inside a `MenuBarExtra` and the user has confi
 
 It doesn’t make a difference, whether system appearance is changed while app is running or before the app is launched. In either case, the `MenuBarExtra` window will be in dark appearance.
 
-If nothing else is specified, the Menu Bar window is actually rendered using a transparent glass style (seemingly in dark appearance). When a `.background(.windowBackground)` is added to the view, the view takes the visual style of a regular window material, but remains in dark appearance. Even after adding `.preferredColorScheme(.light)` the `window still remains in dark appearance.
+If nothing else is specified, the Menu Bar window is actually rendered using a transparent glass style (seemingly in dark appearance). When a `.background(.windowBackground)` is added to the view, the view takes the visual style of a regular window material, but remains in dark appearance. Even after adding `.preferredColorScheme(.light)` the window still remains in dark appearance.
 
 A demo app is attached (`MenuBarExtraDemo`) which includes a regular window and a `MenuBarExtra` in `.window` style. The regular window reacts to system appearance changing between light and dark, but the window in Menu Bar always remains in dark appearance.
