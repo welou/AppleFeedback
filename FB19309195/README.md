@@ -10,7 +10,7 @@ Note that specifically on Desktop a widget would only take on the light or dark 
 
 **Option 2:** Alternatively use any other app which includes a widget which should react to the selected system appearance, for example the system's own Calendar app. Add the widget to Notification Center and to Desktop and change system appearance.
 
-### Expected results:
+### Expected result:
 Widget would update its appearance when system appearance is changed so that widget's appearance always matches system appearance. And more specifically, when system is set to dark appearance, the widget should also be rendered in dark appearance.
 
 ### Actual result:
