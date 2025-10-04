@@ -21,3 +21,20 @@ It doesn’t make a difference, whether system appearance is changed while app i
 If nothing else is specified, the Menu Bar window is actually rendered using a transparent glass style (seemingly in dark appearance). When a `.background(.windowBackground)` is added to the view, the view takes the visual style of a regular window material, but remains in dark appearance. Even after adding `.preferredColorScheme(.light)` the window still remains in dark appearance.
 
 A demo app is attached (`MenuBarExtraDemo`) which includes a regular window and a `MenuBarExtra` in `.window` style. The regular window reacts to system appearance changing between light and dark, but the window in Menu Bar always remains in dark appearance.
+
+## Workaround
+
+MenuBarExtra window behaviour did change on macOS Tahoe beta 5 with Xcode 26 beta 5. The window now does follow the selected system appearance, but it is still not possible to override the window’s `ColorScheme` using `.preferredColorScheme()`.
+
+It is possible to override the actual environment value for the menubar window `colorScheme`, though. In order to achieve the functionality where a `MenuBarExtra` could follow the system appearance and where user could also optionally override this value, one can do something like this:
+```
+MenuBarExtra {
+  if let appearance = myAppSettings.appearance {
+    MenuBarContentView()
+        .environment(\.colorScheme, appearance)
+  } else {
+    MenuBarContentView()
+  }
+}
+```
+The `.environment(\.colorScheme, appearance)` does not accept `nil` values, which is why the `if - else` structure has been used here. In this example, if user has not selected an appearance, we let the `MenuBarContentview` render as it would by default (follows system appearance). The environment value is overwritten only if there is a value (`ColorScheme.light` or `ColorScheme.dark`) to overwrite it with.
